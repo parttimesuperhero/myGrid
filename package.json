@@ -1,0 +1,33 @@
+{
+  "name": "mygrid",
+  "version": "1.0.0",
+  "description": "My Grid System",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp webserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parttimesuperhero/myGrid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parttimesuperhero/myGrid/issues"
+  },
+  "homepage": "https://github.com/parttimesuperhero/myGrid#readme",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-rimraf": "*",
+    "gulp-sass": "*",
+    "gulp-sass-lint": "*",
+    "gulp-webserver": "*",
+    "normalize.css": "^6.0.0"
+  },
+  "devDependencies": {
+    "gulp-data": "^1.2.1",
+    "gulp-pug": "^3.3.0"
+  }
+}
