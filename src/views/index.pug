@@ -1,7 +1,7 @@
-mixin grid(cols)
-  .g-row.demo-row
+mixin flex(cols)
+  .f-row.demo-row
     while cols--
-      .g-col .g-col
+      .f-col .f-col
 
 html
   head
@@ -11,49 +11,49 @@ html
 
   body
     h1 My Grid
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h2 Basic Grid
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 16 Columns
-    +grid(16)
+    +flex(16)
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 8 Columns
-    +grid(8)
+    +flex(8)
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 4 Columns
-    +grid(4)
+    +flex(4)
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 2 Columns
-    +grid(2)
+    +flex(2)
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 1 Column
-    +grid(1)
+    +flex(1)
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h2 Responsive Grid
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 2 Columns - Both 100%, 50% on medium up
-    .g-row.demo-row
-      .g-col.g-col--16.g-col__md--8 .g-col--16.g-col__md--8
-      .g-col.g-col--16.g-col__md--8 .g-col--16.g-col__md--8
+    .f-row.demo-row
+      .f-col.f-col--16.f-col__md--8 .f-col--16.f-col__md--8
+      .f-col.f-col--16.f-col__md--8 .f-col--16.f-col__md--8
 
-    .g-row
-      .g-col
+    .f-row
+      .f-col
         h3 3 Columns - 100, 1@100 2@50 on medium, 1@25, 1 fluid, 1@25 on Large
-    .g-row.demo-row
-      .g-col.g-col--16.g-col__md--16.g-col__lg--4 .g-col--16.g-col__md--8
-      .g-col .g-col
-      .g-col.g-col--16.g-col__md--8.g-col__lg--4 .g-col--16.g-col__md--8
+    .f-row.demo-row
+      .f-col.f-col--16.f-col__md--16.f-col__lg--4 .f-col--16.f-col__md--8
+      .f-col .f-col
+      .f-col.f-col--16.f-col__md--8.f-col__lg--4 .f-col--16.f-col__md--8

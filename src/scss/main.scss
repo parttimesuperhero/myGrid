@@ -1,44 +1,44 @@
 @import 'config';
 
-.g-row {
+.f-row {
   display: flex;
   flex-wrap: wrap;
 }
 
-.g-row--center {
+.f-row--center {
   justify-content: center;
 }
 
-.g-row--between {
+.f-row--between {
   justify-content: space-between;
 }
 
 
-.g-row--space {
+.f-row--space {
   justify-content: space-around;
 }
 
-.g-col {
+.f-col {
   box-sizing: border-box;
   flex-grow: 1;
   margin: 0;
   padding: 0 10px;
 }
 
-[class*="g-col__"],
-[class*="g-col--"] {
+[class*='f-col__'],
+[class*='f-col--'] {
   flex-grow: 0;
 }
 
 @for $i from 1 through $cols {
-  .g-col--#{$i} {
+  .f-col--#{$i} {
     width: 100% / ($cols / $i);
   }
 }
 
 @media #{$md} {
   @for $i from 1 through $cols {
-    .g-col__md--#{$i} {
+    .f-col__md--#{$i} {
       width: 100% / ($cols / $i);
     }
   }
@@ -46,13 +46,8 @@
 
 @media #{$lg} {
   @for $i from 1 through $cols {
-    .g-col__lg--#{$i} {
+    .f-col__lg--#{$i} {
       width: 100% / ($cols / $i);
     }
   }
 }
-
-
-
-
-
