@@ -26,8 +26,7 @@ gulp.task('webserver', ['sass:watch', 'views:watch'], () => {
   gulp.src('./dist/')
     .pipe(webserver({
       livereload: true,
-      directoryListing: false,
-      open: true
+      directoryListing: false
     }));
 });
 

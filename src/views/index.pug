@@ -1,7 +1,8 @@
-mixin flex(cols)
-  .f-row.demo-row
+mixin grid(cols, flex)
+  - var tmpCols = cols
+  .demo-row.row(class=flex ? 'f-row' : '')
     while cols--
-      .f-col .f-col
+      .col(class=`${flex ? 'f-col' : 'col'}--${16 / tmpCols}`) .#{flex ? 'f-col' : 'col'}--#{16 / tmpCols}
 
 html
   head
@@ -11,49 +12,77 @@ html
 
   body
     h1 My Grid
-    .f-row
-      .f-col
-        h2 Basic Grid
-    .f-row
-      .f-col
-        h3 16 Columns
-    +flex(16)
+    .container
+      .row
+        .col
+          h2 Basic Grid
+      .row
+        .col
+          h3 16 Columns
+      +grid(16)
 
-    .f-row
-      .f-col
-        h3 8 Columns
-    +flex(8)
+      .row
+        .col
+          h3 8 Columns
+      +grid(8)
 
-    .f-row
-      .f-col
-        h3 4 Columns
-    +flex(4)
+      .row
+        .col
+          h3 4 Columns
+      +grid(4)
 
-    .f-row
-      .f-col
-        h3 2 Columns
-    +flex(2)
+      .row
+        .col
+          h3 2 Columns
+      +grid(2)
 
-    .f-row
-      .f-col
-        h3 1 Column
-    +flex(1)
+      .row
+        .col
+          h3 1 Column
+      +grid(1)
 
-    .f-row
-      .f-col
-        h2 Responsive Grid
+      .row
+        .col
+          h2 Responsive Grid
+      .row
+        .col
+          h3 2 Columns - Both 100%, 50% on medium up
+      .row.demo-row
+        .col.col--16.col__md--8 .col--16.col__md--8
+        .col.col--16.col__md--8 .col--16.col__md--8
+      .row
+        .col
+          h3 3 Columns - All 100%, 50% on medium up, 25%@L
+      .row.demo-row
+        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
+        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
+        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
+        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
 
-    .f-row
-      .f-col
-        h3 2 Columns - Both 100%, 50% on medium up
-    .f-row.demo-row
-      .f-col.f-col--16.f-col__md--8 .f-col--16.f-col__md--8
-      .f-col.f-col--16.f-col__md--8 .f-col--16.f-col__md--8
+      .f-row
+        .f-col
+          h2 Flex Box Grid
+      .f-row
+        .f-col
+          h3 16 Columns
+      +grid(16, true)
 
-    .f-row
-      .f-col
-        h3 3 Columns - 100, 1@100 2@50 on medium, 1@25, 1 fluid, 1@25 on Large
-    .f-row.demo-row
-      .f-col.f-col--16.f-col__md--16.f-col__lg--4 .f-col--16.f-col__md--8
-      .f-col .f-col
-      .f-col.f-col--16.f-col__md--8.f-col__lg--4 .f-col--16.f-col__md--8
+      .f-row
+        .f-col
+          h3 8 Columns
+      +grid(8, true)
+
+      .f-row
+        .f-col
+          h3 4 Columns
+      +grid(4, true)
+
+      .f-row
+        .f-col
+          h3 2 Columns
+      +grid(2, true)
+
+      .f-row
+        .f-col
+          h3 1 Column
+      +grid(1, true)

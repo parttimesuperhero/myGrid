@@ -1,5 +1,18 @@
 @import 'config';
 
+.col {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+@for $i from 1 through $cols {
+  .col--#{$i} {
+    margin: 0;
+    padding: 0 10px;
+    width: 100% / ($cols / $i);
+  }
+}
+
 .f-row {
   display: flex;
   flex-wrap: wrap;
@@ -18,36 +31,33 @@
   justify-content: space-around;
 }
 
-.f-col {
-  box-sizing: border-box;
+[class*='f-col--'] {
   flex-grow: 1;
-  margin: 0;
-  padding: 0 10px;
 }
 
-[class*='f-col__'],
-[class*='f-col--'] {
+[class*='f-col__'] {
   flex-grow: 0;
 }
 
-@for $i from 1 through $cols {
-  .f-col--#{$i} {
-    width: 100% / ($cols / $i);
-  }
-}
 
-@media #{$md} {
+@media #{$md-query} {
   @for $i from 1 through $cols {
-    .f-col__md--#{$i} {
+    .col__md--#{$i} {
       width: 100% / ($cols / $i);
     }
   }
 }
 
-@media #{$lg} {
+@media #{$lg-query} {
+  .container {
+    max-width: $lg;
+    margin: 0 auto;
+  }
+
   @for $i from 1 through $cols {
-    .f-col__lg--#{$i} {
+    .col__lg--#{$i} {
       width: 100% / ($cols / $i);
     }
   }
 }
+

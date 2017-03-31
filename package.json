@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/parttimesuperhero/myGrid/issues"
   },
+  "sasslintConfig": "./.sass-lint.yml",
   "homepage": "https://github.com/parttimesuperhero/myGrid#readme",
   "dependencies": {
     "gulp": "*",

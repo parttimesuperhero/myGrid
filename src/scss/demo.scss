@@ -37,14 +37,11 @@ h3 {
   padding: 30px 5px 5px;
   position: relative;
 
-  .f-col {
+  .col {
     background: lighten($grey, 5);
-    height: 200px;
+    border: 2px solid $grey;
+    padding: 10px 0;
     text-align: center;
-
-    &:not(:first-child) {
-      border-left: 5px solid $grey;
-    }
   }
 
 
@@ -56,3 +53,4 @@ h3 {
     top: 5px;
   }
 }
+

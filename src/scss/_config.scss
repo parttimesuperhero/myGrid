@@ -1,4 +1,7 @@
-$md: 'screen and (min-width: 48em)';
-$lg: 'screen and (min-width: 60em)';
+$md: 48em;
+$lg: 68em;
+
+$md-query: 'screen and (min-width:$md)';
+$lg-query: 'screen and (min-width:$lg)';
 
 $cols: 16;
