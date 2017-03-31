@@ -50,8 +50,8 @@
 
 @media #{$lg-query} {
   .container {
-    max-width: $lg;
     margin: 0 auto;
+    max-width: $lg;
   }
 
   @for $i from 1 through $cols {
