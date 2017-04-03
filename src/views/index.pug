@@ -3,7 +3,7 @@ mixin grid(cols, flex, breakout)
   .demo-row.row(class=`${flex ? 'f-row' : ''} ${breakout ? 'row--breakout' : ''}`)
     while cols--
       .col.col--16(class=`${flex ? 'f-col' : 'col__sm--' + 16 / tmpCols}`)
-        pre .col.col--16.#{flex ? 'f-col' : 'col--' + 16 / tmpCols}
+        pre .col.col--16.#{flex ? 'f-col' : 'col__sm--' + 16 / tmpCols}
 
 html
   head
