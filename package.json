@@ -2,7 +2,7 @@
   "name": "mygrid",
   "version": "1.0.0",
   "description": "My Grid System",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "dev": "gulp webserver"
   },
