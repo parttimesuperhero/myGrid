@@ -2,11 +2,12 @@ mixin grid(cols, flex)
   - var tmpCols = cols
   .demo-row.row(class=flex ? 'f-row' : '')
     while cols--
-      .col(class=`${flex ? 'f-col' : 'col'}--${16 / tmpCols}`) .#{flex ? 'f-col' : 'col'}--#{16 / tmpCols}
+      .col.col--16(class=`${flex ? 'f-col' : 'col__sm--' + 16 / tmpCols}`)
+        pre .col.col--16.#{flex ? 'f-col' : 'col--' + 16 / tmpCols}
 
 html
   head
-    title My Grid
+    title mYGrid
     link(rel="stylesheet" href="./css/main.css")
     link(rel="stylesheet" href="./css/demo.css")
 
@@ -16,6 +17,8 @@ html
       .row
         .col
           h2 Basic Grid
+          p myGrid is built mobile first, with additional layout break points at <b>sm(30em)</b>, <b>md(48em)</b> and <b>lg(60em)</b>.
+          p myGrid provides a generic, simple 16-column, class and percentage based grid system.
       .row
         .col
           h3 16 Columns
@@ -41,50 +44,96 @@ html
           h3 1 Column
       +grid(1)
 
-      .row
-        .col
-          h2 Responsive Grid
-      .row
-        .col
-          h3 2 Columns - Both 100%, 50% on medium up
-      .row.demo-row
-        .col.col--16.col__md--8 .col--16.col__md--8
-        .col.col--16.col__md--8 .col--16.col__md--8
-      .row
-        .col
-          h3 3 Columns - All 100%, 50% on medium up, 25%@L
-      .row.demo-row
-        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
-        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
-        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
-        .col.col--16.col__md--8.col__lg--4 .col--16.col__lg--4
-
       .f-row
         .f-col
           h2 Flex Box Grid
+          p myGrid also provides a FlexBox based Grid system. Flex Columns will automatically resize to fill the containing row space.
       .f-row
         .f-col
           h3 16 Columns
-      +grid(16, true)
+      .f-row.demo-row
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
+        .col.f-col
+          pre .col.f-col
 
       .f-row
         .f-col
-          h3 8 Columns
-      +grid(8, true)
+          h3 Flex Column Widths
+          p You can give individual columns widths, with the remainder of the space filled by the other 'f-columns'.
+
+      .f-row.demo-row
+        .col.f-col
+          pre .col.f-col
+        .col.col--8
+          pre .col.col--8
+        .col.f-col
+          pre .col.f-col
 
       .f-row
         .f-col
-          h3 4 Columns
-      +grid(4, true)
+          h3 Spacing Columns
+          p You can also give columns fixed widths and space them out using flexbox 'justify-content' properties
 
       .f-row
         .f-col
-          h3 2 Columns
-      +grid(2, true)
+          h3 Center Columns (.f-row.f-row--center)
+      .f-row.f-row--center.demo-row
+        .col.col--2
+          pre .col.col--2
+        .col.col--2
+          pre .col.col--2
+
 
       .f-row
         .f-col
-          h3 1 Column
-      +grid(1, true)
+          h3 Evenly Space Columns (.f-row.f-row--between)
+      .f-row.f-row--between.demo-row
+        .col.col--3
+          pre .col.col--3
+        .col.col--3
+          pre .col.col--3
+        .col.col--3
+          pre .col.col--3
+
+      .f-row
+        .f-col
+          h3 Evenly Space Columns and Center (.f-row.f-row--around)
+      .f-row.f-row--around.demo-row
+        .col.col--3
+          pre .col.col--3
+        .col.col--3
+          pre .col.col--3
+        .col.col--3
+          pre .col.col--3
+
 
     script(src="./js/app.bundle.js")

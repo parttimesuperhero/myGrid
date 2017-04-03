@@ -3,6 +3,7 @@
 .col {
   box-sizing: border-box;
   display: inline-block;
+  vertical-align: top;
 }
 
 @for $i from 1 through $cols {
@@ -26,19 +27,37 @@
   justify-content: space-between;
 }
 
+.f-row--end {
+  justify-content: flex-end;
+}
 
-.f-row--space {
+.f-row--around {
   justify-content: space-around;
 }
 
-[class*='f-col--'] {
+.f-col {
+  flex-basis: 0;
   flex-grow: 1;
 }
 
-[class*='f-col__'] {
-  flex-grow: 0;
+@for $i from 1 through $cols {
+  .f-col--#{$i} {
+    flex-grow: #{$i};
+  }
 }
 
+@media #{$sm-query} {
+  .f-col {
+    width: 0;
+  }
+
+  @for $i from 1 through $cols {
+    .col__sm--#{$i} {
+      width: 100% / ($cols / $i);
+    }
+  }
+
+}
 
 @media #{$md-query} {
   @for $i from 1 through $cols {

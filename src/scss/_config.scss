@@ -1,6 +1,8 @@
+$sm: 30em;
 $md: 48em;
 $lg: 68em;
 
+$sm-query: 'screen and (min-width:$sm)';
 $md-query: 'screen and (min-width:$md)';
 $lg-query: 'screen and (min-width:$lg)';
 
