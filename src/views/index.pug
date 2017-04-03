@@ -1,6 +1,6 @@
-mixin grid(cols, flex)
+mixin grid(cols, flex, breakout)
   - var tmpCols = cols
-  .demo-row.row(class=flex ? 'f-row' : '')
+  .demo-row.row(class=`${flex ? 'f-row' : ''} ${breakout ? 'row--breakout' : ''}`)
     while cols--
       .col.col--16(class=`${flex ? 'f-col' : 'col__sm--' + 16 / tmpCols}`)
         pre .col.col--16.#{flex ? 'f-col' : 'col--' + 16 / tmpCols}
@@ -46,6 +46,14 @@ html
         .col
           h3 1 Column
       +grid(1)
+
+      .row
+        .col
+          h2 Breakount out of a container Grid
+      .row
+        .col
+          h3 Breakout, full width
+      +grid(16, false, true)
 
       .f-row
         .f-col

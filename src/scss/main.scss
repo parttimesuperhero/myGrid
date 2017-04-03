@@ -1,10 +1,26 @@
 @import 'config';
 
+.container,
+.row {
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+}
+
+.row--breakout {
+  left: 50%;
+  transform: translateX(-50vw);
+  width: 100vw;
+}
+
 .col {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
 }
+
 
 @for $i from 1 through $cols {
   .col--#{$i} {
