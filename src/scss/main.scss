@@ -23,7 +23,7 @@
 
 
 @for $i from 1 through $cols {
-  .col--#{$i}:not-first-child {
+  .col--#{$i} {
     margin: 0;
     padding: 0;
     width: 100% / ($cols / $i);
