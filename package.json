@@ -2,7 +2,7 @@
   "name": "mygrid",
   "version": "1.0.0",
   "description": "My Grid System",
-  "main": "dist",
+  "main": "src/scss/main.scss",
   "scripts": {
     "dev": "gulp webserver"
   },
